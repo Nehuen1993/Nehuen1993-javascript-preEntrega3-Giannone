@@ -158,78 +158,11 @@ function comprar() {
     
 }
 
-let buscador = document.getElementById("buscador")
-console.log(buscador)
+let productoBuscado = document.getElementById("buscar")
+productoBuscado.addEventListener("click", fBuscar) 
 
-function filtrar(e) {
-  let arrayFiltrado = productos.filter(producto => producto.nombre.includes(buscador.value))
-  renderizarProductos(arrayFiltrado)
+function fBuscar(e) {
+    let buscador = document.getElementById("buscador").value.toLowerCase()
+    let resultado = personas.filter(persona => persona.nombre.toLowerCase() === buscador)
+    verProductos(resultado)
 }
-
-
-/*
-let precio = 0
-let fin = 0
-function tarjeta(c) {
-    let precioTarjeta =  c * 1.1
-    precio = precioTarjeta
-}
-    
-function efectivo(a, b) {
-let precioEfectivo = a * b
-precio = precioEfectivo
-
-}
-function listaProductos(productos) {
-    return productos.map(producto => {return `Nombre: ${producto.nombre} Precio: ${producto.precio} ID: ${producto.id}`}).join("\n")
-    
-}
-let mensaje = `Quedan ${producto.cantidad} unidades`
-    if (producto.cantidad < 3) {
-        mensaje = "ULTIMAS UNIDADES"
-        tarjetaProducto.classList.add("rojo")
-    }
-    */
-   /* while (fin != 9) {
-let menu = Number(prompt("Bienvenido! Por favor ingrese el numero de lo que necesite hacer \n 1-Ir de compras \n 2-Ver carrito"))   
- if (menu == 1) {
-    let clase = prompt("Por favor ingrese la clase de repusto que necesite \n Frenos \n Suspención \n Motor").toLowerCase()
-    let claseFiltrada = productos.filter (producto => producto.clase === clase)
-    
-    if (claseFiltrada.length == 0) {
-       alert("el valor ingresado no es correcto recarga la pagina por favor")
-        break
-        
-    } 
-    else {
-        let idProducto = Number(prompt("Escriba el ID del producto que desea comprar \n" + listaProductos(claseFiltrada)))         
-        let productoSeleccionado = claseFiltrada.find(producto => producto.id === idProducto)
-            if (productoSeleccionado){
-            carrito.push(productoSeleccionado)
-           alert("se agrego el producto selecionado al carrito")
-            }
-            else {
-               alert("el valor ingresado no es correcto recarga la pagina por favor")
-                break}
-        }
-}
-else if (menu == 2){
-  alert("Los productos de tu carrito son: \n" + listaProductos(carrito))
-}
-else {
-   alert("el valor ingresado no es correcto recarga la pagina por favor")
-    break}
-
-fin = prompt("Si queres terminar la compra preciona 9 \n Si queres seguir comprando toca 0" )
-    if(fin == 9){
-        break
-    }
-    else if (fin !=0)
-    {
-       alert("el valor ingresado no es correcto recarga la pagina por favor")
-        break
-    }   
-}
-alert("Muchas Gracias!")
-
-*/
