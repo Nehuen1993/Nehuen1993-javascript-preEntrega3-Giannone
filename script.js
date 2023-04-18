@@ -163,6 +163,6 @@ productoBuscado.addEventListener("click", fBuscar)
 
 function fBuscar(e) {
     let buscador = document.getElementById("buscador").value.toLowerCase()
-    let resultado = personas.filter(persona => persona.nombre.toLowerCase() === buscador)
+    let resultado = productos.filter(producto => producto.nombre.toLowerCase() === buscador)
     verProductos(resultado)
 }
